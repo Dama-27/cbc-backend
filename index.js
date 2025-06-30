@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import productRouter from './routes/productRouter.js';
 import userRouter from './routes/userRouter.js';
 import jwt from 'jsonwebtoken';
+import orderRouter from './routes/orderRouter.js';
 const app = express();
 
 app.use(bodyparser.json());
@@ -40,9 +41,9 @@ function sucessfullyStarted(){
     console.log("Server is running on port 3000");
 }
 
-app.use("/products", productRouter);
-
+app.use("/products", productRouter)
 app.use("/users", userRouter)
+app.use("/orders", orderRouter)
 
 app.delete("/",()=>{
     console.log("This is a delete request");
