@@ -7,6 +7,8 @@ import jwt from 'jsonwebtoken';
 import orderRouter from './routes/orderRouter.js';
 import cors from 'cors';
 const app = express();
+dotenv.config();
+import dotenv from 'dotenv';
 
 app.use(cors())
 app.use(bodyparser.json());
@@ -34,11 +36,9 @@ app.use((req,res,next)=> {
     }
 })
 
-mongoose.connect("mongodb+srv://admin:123@cluster0.0fpn8wc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect(process.env.MONGODB_URL)
 .then(()=>{console.log("Connected to MongoDB")})
 .catch((err)=>{console.log("Error connecting to MongoDB", err)});
-
-// mongodb+srv://admin:123@cluster0.0fpn8wc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 
 function sucessfullyStarted(){
     console.log("Server is running on port 3000");
