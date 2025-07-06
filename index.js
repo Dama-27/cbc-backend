@@ -44,9 +44,9 @@ function sucessfullyStarted(){
     console.log("Server is running on port 3000");
 }
 
-app.use("/products", productRouter)
-app.use("/users", userRouter)
-app.use("/orders", orderRouter)
+app.use("/api/products", productRouter)
+app.use("/api/users", userRouter)
+app.use("/api/orders", orderRouter)
 
 app.delete("/",()=>{
     console.log("This is a delete request");

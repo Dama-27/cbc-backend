@@ -85,7 +85,7 @@ export function loginUser(req, res) {
                         {
                             message : "login Sucessful",
                             token : token,
-                            user : user
+                            role : user.role
                         }
                     )
                 }
