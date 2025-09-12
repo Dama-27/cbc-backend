@@ -53,7 +53,7 @@ const orderSchema = mongoose.Schema({
                     type: String,
                     required: true
                 },
-                Images : {
+                images : {
                     type: [{type: String}]
                 },
                 labelledPrice : {
